@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<schema xmlns="http://www.w3.org/2001/XMLSchema" targetNamespace="http://www.khandelwal.com/EmployeeSchema"
+	xmlns:tns="http://www.khandelwal.com/EmployeeSchema"
+	elementFormDefault="qualified">
+
+    <element name="name" type="string"></element>
+
+    <element name="designation" type="string"></element>
+
+    <element name="department" type="string"></element>
+
+    <element name="id" type="string"></element>
+
+
+
+    <complexType name="getEmployeeByIdRequest">
+    	<sequence>
+    		<element ref="tns:id"></element>
+    	</sequence>
+    </complexType>
+
+    <complexType name="getEmployeeByIdResponse">
+    	<sequence>
+    		<element name="employee" type="tns:employee"/>
+    	</sequence>
+    </complexType>
+
+    <complexType name="employee">
+    	<sequence>
+    		<element ref="tns:name"></element>
+    		<element ref="tns:designation"></element>
+    		<element ref="tns:department"></element>
+    	</sequence>
+    </complexType>
+</schema>
