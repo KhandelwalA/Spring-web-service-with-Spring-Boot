@@ -3,33 +3,37 @@
 	xmlns:tns="http://www.khandelwal.com/EmployeeSchema"
 	elementFormDefault="qualified">
 
-    <element name="name" type="string"></element>
+	<element name="name" type="string"></element>
 
-    <element name="designation" type="string"></element>
+	<element name="designation" type="string"></element>
 
-    <element name="department" type="string"></element>
+	<element name="department" type="string"></element>
 
-    <element name="id" type="string"></element>
+	<element name="id" type="string"></element>
 
 
 
-    <complexType name="getEmployeeByIdRequest">
-    	<sequence>
-    		<element ref="tns:id"></element>
-    	</sequence>
-    </complexType>
+	<element name="getEmployeeByIdRequest">
+		<complexType>
+			<sequence>
+				<element ref="tns:id"></element>
+			</sequence>
+		</complexType>
+	</element>
 
-    <complexType name="getEmployeeByIdResponse">
-    	<sequence>
-    		<element name="employee" type="tns:employee"/>
-    	</sequence>
-    </complexType>
+	<element name="getEmployeeByIdResponse">
+		<complexType>
+			<sequence>
+				<element name="employee" type="tns:employee" />
+			</sequence>
+		</complexType>
+	</element>
 
-    <complexType name="employee">
-    	<sequence>
-    		<element ref="tns:name"></element>
-    		<element ref="tns:designation"></element>
-    		<element ref="tns:department"></element>
-    	</sequence>
-    </complexType>
+	<complexType name="employee">
+		<sequence>
+			<element ref="tns:name"></element>
+			<element ref="tns:designation"></element>
+			<element ref="tns:department"></element>
+		</sequence>
+	</complexType>
 </schema>
